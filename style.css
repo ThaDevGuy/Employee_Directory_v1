@@ -1,0 +1,321 @@
+
+
+
+/* Reset Styles */
+
+body,
+div,
+a,
+p,
+ul,
+li,
+main,
+header,
+h1,
+h2,
+span,
+footer  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+
+
+
+ /* Base Styles */
+ 
+ html {
+    font-size: 62.5%;
+ }
+
+
+ body {
+     position: relative;
+    font-size: 1.6rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+ }
+
+ ul,
+ li {
+    list-style: none;
+ }
+
+
+ a {
+    text-decoration: none;
+ }
+
+
+ img  {
+    max-width: 100%;
+ }
+
+ .hidden {
+    display: none;
+ }
+
+
+h1,
+ p,
+ a,
+ span {
+     color: rgba(0,0,0, .6);
+ }
+
+
+
+
+ /* Header */
+
+ header {
+    max-width: 126rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+ }
+
+
+ h1 {
+    margin-top: 3rem;
+ }
+
+
+ #search-input  {
+    display: block;
+    padding: 1rem;
+    width: 80%;
+    margin: 3rem auto;
+    line-height: 1.5;
+    border: .5px solid lightgray;
+    border-radius: .3rem;
+ }
+
+ 
+ /* Main */
+
+
+ .no-results {
+     text-align: center;
+     font-size: 2rem;
+     background-color: tomato;
+     color: white;
+     width: 100%;
+     padding: 1rem;
+     border-radius: .4rem;
+ }
+
+.results {
+    max-width: 126rem;
+    padding: 0 2rem;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+
+.card {
+    border: .5px solid lightgray;
+    border-radius: .3rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 3rem;
+    cursor: pointer;
+    transition: all .2s ease-in;
+    backface-visibility: hidden;
+}
+
+.card:hover {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    box-shadow: 0px 4px 13px 2px rgba(0,0,0,0.75);
+}
+.card:active {
+    box-shadow: inset 0px -1px 1px -1px rgba(0,0,0,0.75);
+    transform: scale(0.95);
+}
+
+
+.card img {
+    pointer-events: none;
+}
+.card .info {
+    pointer-events: none;
+}
+
+.card .name, 
+.card .email {
+    margin-bottom: 1rem;
+}
+
+.card .city,
+.card .name {
+    text-transform: capitalize;
+}
+
+.card .email {
+    font-size: 1.2rem;
+}
+
+
+.card img {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 9rem;
+    height: 9rem;
+    display:  block;
+    clip-path: circle(50% at 50% 50%);
+}
+
+.card .info {
+    margin-left: 2rem;
+}
+
+
+
+
+
+ /* Footer */
+
+ footer { 
+    margin-top: auto;
+    text-align: center;
+    padding-bottom: 3rem;
+ }
+
+
+
+ /* Modal */
+
+
+ .modal-wrapper {
+    background-color: #ebe9e7;
+    padding: 5rem 2rem;
+    border: .5px solid #62ced4;
+    border-radius: .4rem;
+    width: 80%;
+    max-width: 43rem;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,-10%);
+    text-align: center;
+ }
+
+ .modal {
+     position: relative;
+ }
+
+
+ .modal hr {
+    margin: 4rem 2rem;
+ }
+
+ 
+ .modal img  {
+    margin: auto;
+    width: 80%;
+    border-radius: 1rem;
+    display:  block;
+    margin-bottom: 5rem;
+    /* clip-path: circle(50% at 50% 50%); */
+ }
+
+ .modal .name {
+     margin-top: 4rem; 
+ }
+
+
+ .btn  {
+     position: absolute;
+     font-size: 3rem;
+     padding: .5rem;
+ }
+
+ .btn-left {
+     top: 60%;
+     left: 0;
+     transform: translateY(-50%);
+ }
+
+ .btn-right {
+    top: 60%;
+    right: 0;
+    transform: translateY(-50%);
+}
+.btn-close {
+    top: -4rem;
+    right: -1rem;
+}
+
+.modal .name,
+.modal .email,
+.phone, 
+.address,
+.dob {
+    margin-bottom: 2rem;
+}
+
+
+
+
+
+
+
+
+/* Media Queries */
+
+@media (min-width: 450px) {
+    .card .email {
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 500px) {
+    .card {
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .card img {
+        width: 15rem;
+        height: 15rem;
+    }
+}
+
+
+@media  (min-width: 768px) {
+    .results {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
+
+    .card {
+        width: 48%;
+    }
+
+    .card img {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .modal-wrapper {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+@media  (min-width: 1024px) {
+    .card {
+        width: 31.5%;
+    }
+    .card img {
+        width: 13rem;
+        height: 13rem;
+    }
+}
